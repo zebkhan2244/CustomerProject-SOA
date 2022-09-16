@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/View/Shared/_Layout.cshtml";
+    // Layout = null;
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+@*<style https: //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css></style>*@
+<div class="container-fluid">
+    <h2>Customer</h2>
+   
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();"><i class="fa fa-add"></i> Add New Customer</button><br /><br />
+    <table id="records_table" class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th hidden>
+                    ID
+                </th>
+                <th>
+                    S.No
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Customer Form</h4>
+                <button type="button" class="close" data-dismiss="modal" style="margin-left:50%">×</button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group" hidden="hidden">
+                        <label for="CusID">ID</label>
+                        <input type="text" class="form-control" id="CusID" name="CusID" placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Select Customer</label>
+                        <select class="form-control" id="CustomerType" name="CustomerType">
+                            <option value="" selected="selected">Select CustomerType...</option>
+                            <option value="1">Permanant</option>
+                            <option value="3">Temprory</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Address</label>
+                        <input type="text" id="Address" name="Address" class="form-control" placeholder="Enter Permanant Address" />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Age">City</label>
+                        <input type="text" class="form-control" name="City" id="City" placeholder="City" />
+                    </div>
+                    <div class="form-group">
+                        <label for="State">State</label>
+                        <input type="text" class="form-control" name="State" id="State" placeholder="State" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Country">Zip</label>
+                        <input type="text" class="form-control" name="Zip" id="Zip" placeholder="Zip" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Description </label>
+                        <textarea type="text" id="Description" name="Description" class="form-control"></textarea>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="SaveCustomer();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/Script/Customer.js"></script>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>*@
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
